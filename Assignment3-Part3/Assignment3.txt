@@ -1,0 +1,7 @@
+3. Make Your First HTTP API(Individual)
+
+In the team project, you need to add a new HTTP API.
+Create a new URL that returns something simple. No complex logic is required for the new method.
+You can simply return a string or do something interesting. You need to verify your change by actually running it with a HTTP Client or other approaches.
+If you implement an HTTP GET method, you can simply try it in your browser.
+Finally, please check in your change for this new method and push it to the GitHub remote repo.
