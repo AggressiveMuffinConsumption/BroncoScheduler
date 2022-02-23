@@ -17,7 +17,7 @@ def johnathan(request):
     return render(request, 'johnathan.html')
 
 def ricky(request):
-    #return render(request, 'ricky.html')
+    return render(request, 'ricky.html')
 
 def db(request):
 
