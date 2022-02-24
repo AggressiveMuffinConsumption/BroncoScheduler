@@ -19,6 +19,9 @@ def johnathan(request):
 def ricky(request):
     return render(request, 'ricky.html')
 
+def april(request):
+    return render(request, 'april.html')
+
 def db(request):
 
     greeting = Greeting()
