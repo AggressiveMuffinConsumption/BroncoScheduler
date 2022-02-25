@@ -22,6 +22,9 @@ def ricky(request):
 def april(request):
     return render(request, 'april.html')
 
+def danica(request):
+    return render(request, 'danica.html')
+
 def db(request):
 
     greeting = Greeting()
