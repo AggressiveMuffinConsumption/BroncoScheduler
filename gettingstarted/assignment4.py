@@ -1,4 +1,5 @@
 import pandas
+import numpy
 
 arr1 = [1,2,3,4,5]
 test1 = pandas.Series(arr1, name="Test Print")
@@ -13,3 +14,12 @@ test2 = pandas.DataFrame({
     "Major" : majors
 })
 print(test2)
+
+print("\nThis is a test of Numpy! \n")
+a = numpy.array([[1,2,3],[4,5,6],[7,8,9]])
+b = numpy.array([2,2,2])
+c = a * b #element wise multiplication
+print(c)
+print("")
+c = b @ a #matrix multiplication
+print(c)
