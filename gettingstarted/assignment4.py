@@ -1,5 +1,6 @@
 import pandas
 import numpy
+from scipy import special
 
 arr1 = [1,2,3,4,5]
 test1 = pandas.Series(arr1, name="Test Print")
@@ -23,3 +24,7 @@ print(c)
 print("")
 c = b @ a #matrix multiplication
 print(c)
+
+print("\nPermutation example: 7 and 3")
+d = special.perm(7, 3, exact = True)
+print(d)
