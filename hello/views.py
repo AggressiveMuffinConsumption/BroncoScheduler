@@ -18,7 +18,13 @@ def johnathan(request):
     return render(request, 'johnathan.html')
 
 def ricky(request):
-    return render(request, 'ricky.html')
+    pVal = special.perm(7, 3, exact = True)
+    eVal = special.exp2(4)
+    context = {
+        "permVal" : pVal,
+        "exp2Val" : eVal
+    }
+    return render(request, 'ricky.html', context)
 
 def april(request):
     return render(request, 'april.html')
@@ -55,3 +61,4 @@ def matrix(request):
     }
     template_name="numpy.html"
     return render(request, template_name, context)
+
