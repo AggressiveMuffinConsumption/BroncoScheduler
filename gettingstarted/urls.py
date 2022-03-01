@@ -1,6 +1,6 @@
-from django.urls import path, include
-
+from django.urls import path, include, re_path
 from django.contrib import admin
+
 
 admin.autodiscover()
 
@@ -22,5 +22,6 @@ urlpatterns = [
     path('johnathan/', hello.views.johnathan),
     path('ricky/', hello.views.ricky),
     path('april/', hello.views.april),
-    path('danica/', hello.views.danica)
+    path('danica/', hello.views.danica),
+    path('numpy/', hello.views.matrix)
 ]
