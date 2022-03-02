@@ -67,10 +67,11 @@ def panda(request) :
     names = ["Peter", "Paul", "Tracy", "Trucy"]
     years = [3, 2, 4, 1]
     majors = ["Computer Science", "Computer Information System", "Computer Engineering", "Undeclared"]
-    context = pandas.DataFrame({
+    test2 = pandas.DataFrame({
         "Name" : names,
         "Year" : years,
         "Major" : majors
     })
+    context = {test2}
     template_name = "pandas.html"
     return render(request, template_name, context)
