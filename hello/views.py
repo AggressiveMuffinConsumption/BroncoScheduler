@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Greeting
 from scipy import special
+import pandas
 
 # Create your views here.
 def index(request):
@@ -62,3 +63,14 @@ def matrix(request):
     template_name="numpy.html"
     return render(request, template_name, context)
 
+def panda(request) :
+    names = ["Peter", "Paul", "Tracy", "Trucy"]
+    years = [3, 2, 4, 1]
+    majors = ["Computer Science", "Computer Information System", "Computer Engineering", "Undeclared"]
+    context = pandas.DataFrame({
+        "Name" : names,
+        "Year" : years,
+        "Major" : majors
+    })
+    template_name = "pandas.html"
+    return render(request, template_name, context)
