@@ -25,4 +25,5 @@ urlpatterns = [
     path('danica/', hello.views.danica),
     path('numpy/', hello.views.matrix),
     path('pandas/', hello.views.pandas),
+    path('scrapy/', hello.views.scrapy),
 ]
