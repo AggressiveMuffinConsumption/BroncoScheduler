@@ -5,7 +5,6 @@ from django.http import HttpResponse
 from .models import Greeting
 from scipy import special
 import pandas
-import scrapy
 
 # Create your views here.
 def index(request):
@@ -16,7 +15,7 @@ def index(request):
 def say_hello(request):
     return render(request, 'hello.html')
 
-def johnathan(request):
+def johnathgitan(request):
     return render(request, 'johnathan.html')
 
 def ricky(request):
@@ -75,18 +74,4 @@ def panda(request) :
     })
     context = {test2}
     template_name = "pandas.html"
-    return render(request, template_name, context)
-
-class MySpider(scrapy.Spider):
-    name = 'testspider'
-    allowed_domains = ['quotes.toscrape.com']
-    start_urls = ['https:quotes.toscrape.com/']
-
-    def parse(self, response):
-        quotes = response.xpath("//div[@class='quote']").extract()
-        yield{'quotes': quotes}
-
-def scrapy(request):
-    contexts = {quotes}
-    template_name = "scrapy.html"
     return render(request, template_name, context)
