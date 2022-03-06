@@ -64,7 +64,7 @@ def matrix(request):
     template_name="numpy.html"
     return render(request, template_name, context)
 
-def panda(request) :
+def pandas(request) :
     names = ["Peter", "Paul", "Tracy", "Trucy"]
     years = [3, 2, 4, 1]
     majors = ["Computer Science", "Computer Information System", "Computer Engineering", "Undeclared"]
