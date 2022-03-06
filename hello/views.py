@@ -73,7 +73,7 @@ def pandas(request) :
         "Year" : years,
         "Major" : majors
     })
-    context = {test2}
+    context = {"context": test2}
     template_name = "pandas.html"
     return render(request, template_name, context)
 
@@ -87,6 +87,6 @@ class MySpider(scrapy.Spider):
         yield{'quotes': quotes}
 
 def scrapy(request):
-    contexts = {quotes}
+    contexts = {"test" : MySpider.parse(self,request)}
     template_name = "scrapy.html"
     return render(request, template_name, context)
