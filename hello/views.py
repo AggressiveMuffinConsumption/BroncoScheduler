@@ -6,6 +6,7 @@ from .models import Greeting
 from scipy import special
 import pandas
 import scrapy
+import unittest
 
 # Create your views here.
 def index(request):
@@ -44,6 +45,17 @@ def db(request):
     return render(request, "db.html", {"greetings": greetings})
 
 def matrix(request):
+    aString, bString ,cString ,c1String = matrixUse()
+    context = {
+        "matrix_a": aString,
+        "matrix_b": bString,
+        "matrix_c": cString,
+        "matrix_c1": c1String
+    }
+    template_name="numpy.html"
+    return render(request, template_name, context)
+
+def matrixUse():
     a = numpy.array([[1,2,3],[4,5,6],[7,8,9]])
     b = numpy.array([2,2,2])
     c = a * b #element wise multiplication
@@ -55,14 +67,7 @@ def matrix(request):
     bString = numpy.array2string(b)
     cString = numpy.array2string(c)
     c1String = numpy.array2string(c1)
-    context = {
-        "matrix_a": aString,
-        "matrix_b": bString,
-        "matrix_c": cString,
-        "matrix_c1": c1String
-    }
-    template_name="numpy.html"
-    return render(request, template_name, context)
+    return aString,bString,cString,c1String
 
 def pandas(request) :
     names = ["Peter", "Paul", "Tracy", "Trucy"]
@@ -90,3 +95,9 @@ def scrapy(request):
     contexts = {quotes}
     template_name = "scrapy.html"
     return render(request, template_name, context)
+
+class TestAddFishToAquarium(unittest.TestCase):
+    def test_Matrix(self):
+        actual = matrix()
+        expected = ("[[1 2 3] [4 5 6] [7 8 9]]","[2 2 2]","[[ 2 4 6] [ 8 10 12] [14 16 18]]","[24 30 36]")
+        self.assertEqual(actual, expected)
