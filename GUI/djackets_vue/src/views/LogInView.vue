@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <LogIn msg="Welcome to Your Vue.js App"/>
+  <div>
+    <LogIn msg="Welcome to Bronco Scheduler"/>
   </div>
 </template>
 
