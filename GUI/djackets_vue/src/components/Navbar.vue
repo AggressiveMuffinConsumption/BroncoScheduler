@@ -32,13 +32,13 @@ export default {
 }
 
 #navbar h1 {
-    font-size: 25pt;
+    font-size: 20pt;
     padding-left: 30px;
     float: left;
 }
 
 .options {
-    padding-top: 30px;
+    padding-top: 15px;
     float: right;
 }
 
@@ -47,9 +47,13 @@ button {
     float: left;
     margin-right: 20px;
     border: none;
-    padding: 0 20px;
+    padding: 10px 10px;
     color: #ffffff;
     font-size: 15pt;
+}
+
+button:hover {
+    border-bottom: 3px solid #ffffff;
 }
 
 </style>
