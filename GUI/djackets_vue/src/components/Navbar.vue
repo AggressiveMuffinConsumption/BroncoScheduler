@@ -1,6 +1,6 @@
 <template>
     <div id="navbar">
-        <h1>Bronco Scheduler</h1>
+        <h1>Bronco Scheduler_</h1>
         <div class="options">
             <router-link to="/required"><button>Required Courses</button></router-link>
             <router-link to="/history"><button>Course History</button></router-link>
@@ -17,6 +17,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Roboto&display=swap');
+
 #navbar {
     background: #01426A;
     width: 100%;
@@ -30,13 +32,13 @@ export default {
 }
 
 #navbar h1 {
-    text-transform: uppercase;
-    font-size: 20pt;
-    padding-left: 20px;
+    font-size: 25pt;
+    padding-left: 30px;
     float: left;
 }
 
 .options {
+    padding-top: 30px;
     float: right;
 }
 
@@ -47,6 +49,7 @@ button {
     border: none;
     padding: 0 20px;
     color: #ffffff;
+    font-size: 15pt;
 }
 
 </style>

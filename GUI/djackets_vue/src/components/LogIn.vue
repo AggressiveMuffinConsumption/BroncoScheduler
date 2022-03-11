@@ -3,7 +3,7 @@
     <h1>Bronco Scheduler</h1>
       <input v-model="username" placeholder="username" class="textbox" label="username"/><br />
       <input v-model="password" placeholder="password" class="textbox" label="password"/><br />
-      <button type="login" variant="primary" class="login">Log In</button><br />
+      <router-link to="/required"><button type="login" variant="primary" class="login">Log In</button></router-link><br />
       Create Account &nbsp;|&nbsp; Forgot Password
   </div>
 </template>
@@ -15,10 +15,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Roboto&display=swap');
 h1 {
-  font-family: Outfit, Helvetica, Arial, sans-serif;
   font-size: 80pt;
+  font-weight: 600;
 }
 
 .textbox {
