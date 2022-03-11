@@ -10,13 +10,14 @@
         <th>Number of Units</th>
       </tr>
       <tr>
-        <td><input type="checkbox"/></td>
+        <td><input type="checkbox" id="checkbox" v-model="unchecked" 
+             v-on:click="selectTest">
+            <label for="checkbox">{{ checked }}</label></td>
         <td>CS 4800</th>
         <td>Software Engineering</th>
         <td>4</th>
       </tr>
     </table>
-  </div>
 </template>
 
 <script>
@@ -26,7 +27,13 @@ export default {
   components: {
     Navbar,
   },
+  selectTest: function(value,event) {
+    if (event.target.unchecked) {
+       alert('isSelected');
+    }
 };
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
