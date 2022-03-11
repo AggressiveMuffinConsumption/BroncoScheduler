@@ -2,7 +2,7 @@
   <div>
     <Navbar />
     <h1 msg="unit testing">Course History</h1>
-    <p>{{ msg }}</p>
+    <p>Unit Testing: {{ msg }}</p>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   components: {
     Navbar,
   },
-  name: 'Unit Testing',
+  name: 'Test Message',
   props: {
     msg: String
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <History />
+    <History msg="Hello World" />
   </div>
 </template>
 
