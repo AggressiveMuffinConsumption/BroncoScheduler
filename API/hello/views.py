@@ -94,4 +94,4 @@ class MySpider(scrapy.Spider):
 def scrapy(request):
     contexts = {quotes}
     template_name = "scrapy.html"
-    return render(request, template_name, context)
+    return render(request, template_name, contexts)
