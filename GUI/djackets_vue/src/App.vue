@@ -1,9 +1,9 @@
-<template>
+<template lang="en">
   <div>
     <nav>
-      <router-link to="/">Log In</router-link> |
+      <!--<router-link to="/">Log In</router-link> |
       <router-link to="/history">Course History</router-link> | 
-      <router-link to="/required">Required Courses</router-link>
+      <router-link to="/required">Required Courses</router-link>-->
     </nav>
     <router-view/>
   </div>
@@ -35,5 +35,13 @@ nav {
       color: #42b983;
     }
   }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Outfit, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 80pt;
 }
 </style>
