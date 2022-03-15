@@ -3,7 +3,7 @@
     <h1>Bronco Scheduler</h1>
       <input v-model="username" placeholder="username" class="textbox" label="username"/><br />
       <input v-model="password" placeholder="password" class="textbox" label="password"/><br />
-      <router-link to="/required"><button type="login" variant="primary" class="login">Log In</button></router-link><br />
+      <router-link to="/home"><button variant="primary" class="login">Log In</button></router-link><br />
       Create Account &nbsp;|&nbsp; Forgot Password
   </div>
 </template>

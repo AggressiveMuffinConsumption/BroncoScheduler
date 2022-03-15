@@ -1,39 +1,40 @@
 <template>
-  <div>
+  <div id="container">
     <h1>Required Courses</h1>
     <!--Scheduler Table-->
-    <div class="scheduler table-format">
-    <table>
-      <tr>
-        <th style="width:10%">Selected</th>
-        <th style="width:15%">Course Number</th>
-        <th style="width:30%">Course Name</th>
-        <th style="width:15%">Number of Units</th>
-      </tr>
-      <tr>
-        <td><input type="checkbox" id="checkbox" v-model="unchecked" v-on:click="selectTest">
-            <label for="checkbox">{{ checked }}</label></td>
-        <td>CS 4800</td>
-        <td>Software Engineering</td>
-        <td>4.00</td>
-      </tr>
-      <tr>
-        <td><input type="checkbox" id="checkbox" v-model="unchecked" v-on:click="selectTest">
-            <label for="checkbox">{{ checked }}</label></td>
-        <td>CS 4630</td>
-        <td>Undergrad Seminar</td>
-        <td>1.00</td>
-      </tr>
-      <tr>
-          <td><input type="checkbox" id="checkbox" v-model="unchecked" v-on:click="selectTest">
-            <label for="checkbox">{{ checked }}</label></td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+    <div class="scheduler">
+      <table>
+        <tr>
+          <th style="width:10%">Selected</th>
+          <th style="width:15%">Course Number</th>
+          <th style="width:30%">Course Name</th>
+          <th style="width:15%">Number of Units</th>
         </tr>
-    </table></div>
+        <tr>
+          <td><input type="checkbox" id="checkbox" v-model="unchecked" v-on:click="selectTest">
+              <label for="checkbox">{{ checked }}</label></td>
+          <td>CS 4800</td>
+          <td>Software Engineering</td>
+          <td>4.00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="checkbox" v-model="unchecked" v-on:click="selectTest">
+              <label for="checkbox">{{ checked }}</label></td>
+          <td>CS 4630</td>
+          <td>Undergrad Seminar</td>
+          <td>1.00</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="checkbox" v-model="unchecked" v-on:click="selectTest">
+              <label for="checkbox">{{ checked }}</label></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+      </table>
+    </div>
     <div class="right">
     <!--Filters Selection-->
-      <table style="width:100%">
+      <table>
         <th>Course Filters</th>
         <tr>
           <td><input type="checkbox" id="checkbox" v-model="unchecked" v-on:click="selectTest">
@@ -58,9 +59,9 @@
       </table>
       <br />
       <!--Planning Semester-->
-      <table class="shopping" style="width:100%">
+      <table class="shopping">
         <!--<th>2022 Fall</th>-->
-        <thead style="border-bottom:1px solid gray"><!--bad practice-->
+        <thead style="border-bottom:1px solid #aaaaaa"><!--bad practice-->
             <p align="center">Fall 2022</p>
         </thead>
         <tbody>
@@ -70,7 +71,7 @@
           <th>Courses</th>
           <th>Units</th>
         </tr>
-        <tr style="border-top: 1px solid gray">
+        <tr style="border-top: 1px solid #aaaaaa">
           <td>CS 4800</td>
           <td>4.00</td>
         </tr>
@@ -93,46 +94,45 @@
 <script>
 
 export default {
-  components: {
-    Navbar,
-  },
 };
-
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped lang="css">
 h1 {
-  font-size: 40pt;
+  text-align: left;
 }
 .scheduler{
-  float:left;
-  width: 70%;
-  padding: 5px 10px 5px 30px;
+  float: left;
+  width: 60%;
+  padding: 5px 10px 5px 20px;
 }
+
 .right{
-  float:right;
-  width: 30%;
-  padding: 5px 30px 10px 10px;
+  float: right;
+  width: 35%;
+  padding: 5px 20px 10px 10px;
 }
-.table-format{
-  th, td{
-   border: 1px solid gray;
-   border-collapse: collapse; 
-   padding: 10px;
+
+  .right table {
+    width: 100%;
   }
+
+
+th, td, tr {
+  padding: 10px;
+  border: 1px solid #aaaaaa;
 }
+
 table{
-  border: 1px solid gray;
-  th, td{
-    padding: 3px 10px 3px 10px;
-  }
-.foot{
-  border: 1px solid gray;
-  td{
-    border-left:1px solid gray;
-    }
-  }
+  background: #ffffff;
+  border: 1px solid #aaaaaa;
+  border-collapse: collapse;
+}
+
+#container {
+  margin-top: 50px;
+  padding: 0px 50px;
 }
 </style>

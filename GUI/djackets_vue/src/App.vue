@@ -18,6 +18,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-size: 12pt;
 }
 
 p {
@@ -42,6 +43,6 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 80pt;
+  font-size: 40pt;
 }
 </style>

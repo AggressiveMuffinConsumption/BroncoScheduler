@@ -94,7 +94,6 @@ export default {
 <style scoped lang="css">
 h1 {
   text-align: left;
-  font-size: 40pt;
   margin-bottom: 0;
 }
 

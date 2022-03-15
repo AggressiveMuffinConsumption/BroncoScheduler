@@ -1,10 +1,10 @@
 <template>
     <div id="navbar">
-        <h1>Bronco Scheduler_</h1>
+        <router-link to="/home"><button id="title"><h1>Bronco Scheduler_</h1></button></router-link>
         <div class="options">
             <router-link to="/required"><button>Required Courses</button></router-link>
             <router-link to="/history"><button>Course History</button></router-link>
-            <button>Username</button>
+            <router-link to="/profile"><button>Username</button></router-link>
             <button>&nbsp;</button>
         </div>
     </div>
@@ -31,25 +31,35 @@ export default {
     font-size: 16pt;
 }
 
-#navbar h1 {
+#navbar #title {
+    background: transparent;
     font-size: 20pt;
+    padding: 0;
     padding-left: 30px;
     float: left;
+    border: none;
+    color: #ffffff;
+}
+
+#title h1 {
+    font-size: 25pt;
+    padding: 0;
+    margin: 0;
 }
 
 .options {
-    padding-top: 15px;
     float: right;
 }
 
-button {
+.options button {
     background: transparent;
     float: left;
     margin-right: 20px;
     border: none;
-    padding: 10px 10px;
+    padding: 10px 10px 7px 10px;
     color: #ffffff;
     font-size: 15pt;
+    border-bottom: 3px solid transparent;
 }
 
 button:hover {
