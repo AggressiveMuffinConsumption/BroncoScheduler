@@ -61,10 +61,9 @@
       <!--Planning Semester-->
       <table class="shopping">
         <!--<th>2022 Fall</th>-->
-        <thead style="border-bottom:1px solid #aaaaaa"><!--bad practice-->
-            <p align="center">Fall 2022</p>
-        </thead>
-        <tbody>
+        <th colspan="2"><!--bad practice-->
+            <h2>Fall 2022</h2>
+        </th>
         <tr>
           <!--<td></td><input type="checkbox" id="checkbox" v-model="unchecked" v-on:click="selectTest">
             <label for="checkbox">{{ checked }}</label></td>-->
@@ -79,10 +78,9 @@
           <td>&nbsp;</td>
           <td>&nbsp;</td>
         </tr>
-        </tbody>
         <tfoot class="foot">
           <tr>
-            <td>Total</td>
+            <td align="right">Total</td>
             <td>&nbsp;</td>
           </tr>
         </tfoot>
@@ -103,16 +101,21 @@ export default {
 h1 {
   text-align: left;
 }
+h2 {
+  margin: 0;
+  padding: 0;
+}
+  h2::first-letter {
+    text-decoration: underline;
+  }
 .scheduler{
   float: left;
   width: 60%;
-  padding: 5px 10px 5px 20px;
 }
 
 .right{
   float: right;
   width: 35%;
-  padding: 5px 20px 10px 10px;
 }
 
   .right table {
