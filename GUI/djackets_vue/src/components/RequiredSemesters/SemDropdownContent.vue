@@ -1,6 +1,11 @@
 <template>
-    <div v-if="active">
-        <slot />
+    <div v-if="active" class="dropdown">
+        <slot>
+            {{ changeSem }}
+            <ul>
+                <li v-for="(semester, id) in semesters" :key="id"><button>{{ semester }}</button></li>
+            </ul>
+        </slot>
     </div>
 </template>
 
@@ -11,11 +16,52 @@ export default {
     computed: {
         active() {
             return this.sharedState.active
+        },
+    },
+    data() {
+        return {
+            semesters:  {
+                "1" : "Fall 2020",
+                "2" : "Spring 2021",
+                "3" : "Summer 2021",
+                "4" : "Fall 2021",
+                "5" : "Spring 2022",
+                "6" : "Summer 2022",
+                "7" : "Add semesters here",
+            }
         }
     },
 }
 </script>
 
 <style scoped>
+ul {
+    margin: 0; padding: 0;
+    list-style-type: none;
+}
 
+li {
+    background: #ffffff;
+    border: 1px solid #aaaaaa;
+    border-top: none;
+}
+
+button {
+    background: transparent;
+    width: 100%;
+    padding: 15px 0px;
+    border: none;
+    box-sizing: border-box;
+}
+
+    button:hover {
+        background: #01426A;
+        color: #ffffff;
+    }
+
+.dropdown {
+    width: 32.4%;
+    position: absolute;
+    box-sizing: border-box;
+}
 </style>

@@ -2,21 +2,30 @@
   <div class="dropdown" @click="toggle">
     <slot name="toggler">
       <button>
-        <h2>
-          Semester
-        </h2>
+          Change Semester
         <div class="arrow">
             v
         </div>
       </button>
     </slot>
     <slot />
+    <SemDropdownContent />
+    <SemDropdownTable :semester="semester" />
   </div>
 </template>
 
 <script>
+import SemDropdownContent from "./SemDropdownContent.vue";
+import SemDropdownTable from "./SemDropdownTable.vue";
+
 export default {
   name: "SemesterDropdown",
+  components: {
+    SemDropdownContent,
+    SemDropdownTable,
+  },
+  props: {
+  },
   provide() {
     return {
       sharedState: this.sharedState,
@@ -27,6 +36,7 @@ export default {
       sharedState: {
         active: false,
       },
+      semester: "Placeholder",
     };
   },
   methods: {
@@ -38,9 +48,6 @@ export default {
 </script>
 
 <style scoped>
-.dropdown {
-  margin-top: 20px;
-}
 
 button {
   background: #ffffff;
@@ -48,7 +55,6 @@ button {
   padding: 10px 0px;
   border: 1px solid #aaaaaa;
   border-radius: 0;
-  color: #2c3e50;
   font-size: 13pt;
   font-weight: 400;
 }
@@ -63,16 +69,15 @@ h2:first-letter {
 
 .arrow {
     background: #01426A;
-    width: 30px; height: 30px;
+    width: 20px; height: 20px;
     margin-right: 20px;
-    margin-top: -30px;
     float: right;
     font-family: Outfit, Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    font-size: 15pt;
+    font-size: 13pt;
     color: #ffffff;
     border-radius: 100%;
     box-sizing: border-box;
+    text-align: center;
 }
 
     .arrow:hover {
