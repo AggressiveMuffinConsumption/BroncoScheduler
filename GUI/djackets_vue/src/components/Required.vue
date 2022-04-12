@@ -57,12 +57,26 @@
           <td>prerequisites</td>
         </tr>
       </table>
-      <br />
+      <!--testing dropdown-->
+      <SemDropdown>
+        <SemDropdownContent>
+          <ul>
+            <li>Fall 2020</li>
+            <li>Spring 2021</li>
+            <li>Summer 2021</li>
+            <li>Fall 2021</li>
+            <li>Spring 2022</li>
+            <li>Summer 2022</li>
+          </ul>
+        </SemDropdownContent>
+      </SemDropdown>
+
       <!--Planning Semester-->
       <table class="shopping">
         <!--<th>2022 Fall</th>-->
-        <thead style="border-bottom:1px solid #aaaaaa"><!--bad practice-->
-            <p align="center">Fall 2022</p>
+        <thead>
+            <td colspan="2"><h2>Fall 2022</h2>
+            </td>
         </thead>
         <tbody>
         <tr>
@@ -92,8 +106,18 @@
 </template>
 
 <script>
+import App from '../App.vue';
+import SemDropdown from './RequiredSemesters/SemDropdown.vue';
+import SemDropdownContent from "./RequiredSemesters/SemDropdownContent.vue";
+import SemDropdownTable from "./RequiredSemesters/SemDropdownTable.vue";
 
 export default {
+  components: {
+    SemDropdown,
+    SemDropdownContent,
+    SemDropdownTable,
+    App,
+  },
 };
 
 </script>
@@ -119,6 +143,13 @@ h1 {
     width: 100%;
   }
 
+h2 {
+  margin: 0;
+}
+
+  h2:first-letter {
+    text-decoration: underline;
+  }
 
 th, td, tr {
   padding: 10px;
@@ -134,5 +165,14 @@ table{
 #container {
   margin-top: 50px;
   padding: 0px 50px;
+}
+
+.shopping {
+  margin-top: 20px;
+}
+
+ul {
+  margin: 0; padding: 0;
+  list-style-type: none;
 }
 </style>
