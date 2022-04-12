@@ -1,11 +1,12 @@
 <template>
   <div>
     <h1>Bronco Scheduler</h1>
-      <input v-model="username" placeholder="username" class="textbox" label="username"/><br />
-      <input v-model="password" placeholder="password" class="textbox" label="password"/><br />
-      <router-link to="/home"><button variant="primary" class="login">Log In</button></router-link><br />
-      <router-link to="/create-account">Create Account</router-link> | 
-      <router-link to="/forgot-password">Forgot Password</router-link><br />
+    <h2>Forgot Password?</h2>
+      Please enter your email: <br />
+      <input v-model="email" placeholder="email" class="textbox" label="email"/><br />
+      <router-link to="/forgot-password"><button variant="primary" class="login">Submit</button></router-link><br />
+      Have an account? 
+      <router-link to="/">Log In</router-link>
   </div>
 </template>
 
@@ -17,7 +18,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 h1 {
-  font-size: 80pt;
+  font-size: 50pt;
   font-weight: 600;
 }
 
