@@ -132,13 +132,11 @@ h1 {
 .scheduler {
   float: left;
   width: 60%;
-  padding: 5px 10px 5px 20px;
 }
 
 .right {
   float: right;
   width: 35%;
-  padding: 5px 20px 10px 10px;
 }
 
 .right table {
