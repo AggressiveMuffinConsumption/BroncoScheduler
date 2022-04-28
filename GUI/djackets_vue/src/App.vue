@@ -45,4 +45,10 @@ h1, h2, h3, h4, h5 {
 h1 {
   font-size: 40pt;
 }
+
+button {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  color: #2c3e50;
+  font-size: 12pt;
+}
 </style>

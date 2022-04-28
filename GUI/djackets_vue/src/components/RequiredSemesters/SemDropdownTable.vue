@@ -32,11 +32,17 @@
 </template>
 
 <script>
+import SemDropdownContent from "./SemDropdownContent.vue";
 
 export default {
     props: {
-        semester: String,
-    }
+        
+    },
+    data() {
+        return {
+            semester: SemDropdownContent.methods.getSemester()
+        };
+    },
 }
 </script>
 

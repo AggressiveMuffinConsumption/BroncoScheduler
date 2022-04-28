@@ -2,7 +2,7 @@
   <div class="dropdown" @click="toggle">
     <slot name="toggler">
       <button>
-          Change Semester
+          {{ semester }}
         <div class="arrow">
             v
         </div>
@@ -10,7 +10,7 @@
     </slot>
     <slot />
     <SemDropdownContent />
-    <SemDropdownTable :semester="semester" />
+    <SemDropdownTable />
   </div>
 </template>
 
@@ -25,24 +25,30 @@ export default {
     SemDropdownTable,
   },
   props: {
+    
   },
   provide() {
     return {
       sharedState: this.sharedState,
     };
   },
+  methods: {
+  },
   data() {
     return {
       sharedState: {
         active: false,
       },
-      semester: "Placeholder",
+      semester: SemDropdownContent.methods.getSemester(),
     };
   },
   methods: {
     toggle() {
       this.sharedState.active = !this.sharedState.active;
     },
+    // semester() {
+    //   return getSemester()
+    // }
   },
 };
 </script>

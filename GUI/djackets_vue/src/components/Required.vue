@@ -121,6 +121,10 @@ export default {
     SemDropdown,
     App,
   },
+  props: {
+    unchecked: Boolean,
+    checked: Boolean
+  }
 };
 </script>
 
