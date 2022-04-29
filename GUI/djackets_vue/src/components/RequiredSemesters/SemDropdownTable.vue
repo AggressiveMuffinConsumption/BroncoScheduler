@@ -40,7 +40,6 @@ export default {
     },
     data() {
         return {
-            semester: SemDropdownContent.methods.getSemester()
         };
     },
 }

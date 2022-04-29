@@ -20,12 +20,11 @@ import SemDropdownTable from "./SemDropdownTable.vue";
 
 export default {
   name: "SemesterDropdown",
+  props: {
+  },
   components: {
     SemDropdownContent,
     SemDropdownTable,
-  },
-  props: {
-    
   },
   provide() {
     return {
@@ -39,12 +38,15 @@ export default {
       sharedState: {
         active: false,
       },
-      semester: SemDropdownContent.methods.getSemester(),
     };
   },
   methods: {
     toggle() {
       this.sharedState.active = !this.sharedState.active;
+      if (this.semester == null || this.semester == undefined)
+        this.semester = "Select a Semester";
+      else
+        this.semester = SemDropdownContent.methods.getSemester();
     },
     // semester() {
     //   return getSemester()

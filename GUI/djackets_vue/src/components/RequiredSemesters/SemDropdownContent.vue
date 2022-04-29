@@ -22,15 +22,14 @@ export default {
     },
     methods: {
         selectSem(semester) {
-            console.log(semester)
             this.sem = semester
+            console.log(this.sem)
         },
         getSemester() {
             console.log("getSemester() " + this.sem)
             if (this.sem == null)
                 return "Select Semester"
             return this.sem
-            
         }
     },
     data() {
