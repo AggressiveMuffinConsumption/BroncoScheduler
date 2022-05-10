@@ -5,6 +5,7 @@ from PIL import Image
 
 from django.core.files import File
 from django.db import models
+from django.forms import EmailField
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -80,6 +81,19 @@ class Department(models.Model):
     def get_absolute_url(self):
         return f'/{self.slug}/'
 
+class Program(models.Model):
+    name = models.CharField(max_length=255)
+    slug = models.SlugField()
+
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return f'/{self.slug}/'
+
 class Classes(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField()
@@ -88,7 +102,7 @@ class Classes(models.Model):
     standing = models.IntegerField()
     department = models.ForeignKey(Department, null = True, related_name='classes',on_delete=models.SET_NULL)
     units = models.IntegerField(default=3)
-    
+    program = models.ManyToManyField(Program)
 
     class Meta:
         ordering = ('name',)
@@ -98,3 +112,21 @@ class Classes(models.Model):
 
     def get_absolute_url(self):
         return f'/{self.department.slug}/{self.slug}/'
+
+class Student(models.Model):
+    firstname = models.CharField(max_length=255)
+    lastname = models.CharField(max_length=255)
+    username = models.CharField(max_length=255)
+    slug = models.SlugField()
+    standing = models.IntegerField(default=1)
+    degree = models.ForeignKey(Program, null = True, related_name='degree',on_delete=models.SET_NULL,default = 1)    
+    email = models.EmailField(default = "blank@cpp.edu")
+
+    class Meta:
+        ordering = ('lastname',)
+
+    def __str__(self):
+        return self.firstname + " " +self.lastname
+
+    def get_absolute_url(self):
+        return f'/{self.username}/'
