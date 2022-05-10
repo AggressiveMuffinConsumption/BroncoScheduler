@@ -1,6 +1,6 @@
 <template>
     <div id="container">
-      <h1>Hello, Username!</h1>
+      <h1>Hello, {{user}}!</h1>
       <h2>Important Dates</h2>
       <table><caption>Overview of Fall 2021 Scheduling and Registration Deadlines</caption>
         <thead>
@@ -38,41 +38,49 @@
       </table>
       <h2>To Do</h2>
         <ul>
-          <li>finish schedule</li>
+          <li>Graduate</li>
         </ul>
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
-
+  data(){
+    return{
+      user: 'j'
+    }
+  },
+  
+  mounted(){
+  document.title = 'Home | Bronco Scheduler';
+  console.log('App Mounted');
+    if (localStorage.getItem('user')) 
+        this.user = localStorage.getItem('user');
+  },
 }
+
 </script>
 <style scoped>
 h1 {
     font-size: 80pt;
 }
-
 table {
   background: #ffffff;
   width: 95%;
   padding: 0;
   border-collapse: collapse;
 }
-
   table:nth-child(odd) {
     margin-left: 25px;
   }
-
 th, td {
   border: 1px solid #aaaaaa;
   padding: 10px;
   text-align: left;
 }
-
 ul {
     list-style-type:circle;
 }
-
 #container {
   margin-top: 50px;
   padding: 0px 50px;

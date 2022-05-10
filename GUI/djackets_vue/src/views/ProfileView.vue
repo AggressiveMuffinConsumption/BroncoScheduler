@@ -8,7 +8,6 @@
 <script>
 import Navbar from "@/components/Navbar.vue"
 import Profile from '@/components/Profile.vue'
-
 export default {
   name: 'HistoryView',
   components: {

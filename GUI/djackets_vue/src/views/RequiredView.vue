@@ -9,7 +9,6 @@
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue"
 import Required from '@/components/Required.vue'
-
 export default {
   name: 'RequiredView',
   components: {

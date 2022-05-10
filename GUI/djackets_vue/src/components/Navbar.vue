@@ -4,8 +4,7 @@
         <div class="options">
             <router-link to="/required"><button>Required Courses</button></router-link>
             <router-link to="/history"><button>Course History</button></router-link>
-            <router-link to="/profile"><button>Username</button></router-link>
-            <button>&nbsp;</button>
+            <router-link to="/profile"><button>Profile</button></router-link>
         </div>
     </div>
 </template>
@@ -18,7 +17,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Outfit&family=Roboto&display=swap');
-
 #navbar {
     background: #01426A;
     width: 100%;
@@ -30,7 +28,6 @@ export default {
     text-align: left;
     font-size: 16pt;
 }
-
 #navbar #title {
     background: transparent;
     font-size: 20pt;
@@ -40,17 +37,14 @@ export default {
     border: none;
     color: #ffffff;
 }
-
 #title h1 {
     font-size: 25pt;
     padding: 0;
     margin: 0;
 }
-
 .options {
     float: right;
 }
-
 .options button {
     background: transparent;
     float: left;
@@ -61,9 +55,7 @@ export default {
     font-size: 15pt;
     border-bottom: 3px solid transparent;
 }
-
 button:hover {
     border-bottom: 3px solid #ffffff;
 }
-
 </style>
